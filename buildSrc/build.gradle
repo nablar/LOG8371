@@ -101,32 +101,32 @@ repositories {
 dependencies {
   if (project.ext.has("isEclipse") == false || project.ext.isEclipse == false) {
     // eclipse is confused if this is set explicitly
-    compile sourceSets.minimumRuntime.output
+    implementation sourceSets.minimumRuntime.output
   }
 
-  compile localGroovy()
+  implementation localGroovy()
 
-  compile 'commons-codec:commons-codec:1.12'
-  compile 'org.apache.commons:commons-compress:1.19'
+  implementation 'commons-codec:commons-codec:1.12'
+  implementation 'org.apache.commons:commons-compress:1.19'
 
-  compile 'com.netflix.nebula:gradle-extra-configurations-plugin:3.0.3'
-  compile 'com.netflix.nebula:nebula-publishing-plugin:4.4.4'
-  compile 'com.netflix.nebula:gradle-info-plugin:5.1.0'
-  compile 'org.eclipse.jgit:org.eclipse.jgit:5.5.0.201909110433-r'
-  compile 'com.netflix.nebula:gradle-info-plugin:3.0.3'
-  compile 'com.perforce:p4java:2012.3.551082' // THIS IS SUPPOSED TO BE OPTIONAL IN THE FUTURE....
-  compile 'org.apache.rat:apache-rat:0.11'
-  compile "org.elasticsearch:jna:4.5.1"
-  compile 'com.github.jengelman.gradle.plugins:shadow:5.1.0'
-  compile 'de.thetaphi:forbiddenapis:2.7'
-  compile 'com.avast.gradle:gradle-docker-compose-plugin:0.8.12'
-  testCompile "junit:junit:${props.getProperty('junit')}"
-  testCompile "com.carrotsearch.randomizedtesting:randomizedtesting-runner:${props.getProperty('randomizedrunner')}"
-  testCompile 'com.github.tomakehurst:wiremock-jre8-standalone:2.23.2'
-  testCompile 'org.mockito:mockito-core:1.9.5'
-  minimumRuntimeCompile "junit:junit:${props.getProperty('junit')}"
-  minimumRuntimeCompile localGroovy()
-  minimumRuntimeCompile gradleApi()
+  implementation 'com.netflix.nebula:gradle-extra-configurations-plugin:3.0.3'
+  implementation 'com.netflix.nebula:nebula-publishing-plugin:4.4.4'
+  implementation 'com.netflix.nebula:gradle-info-plugin:5.1.0'
+  implementation 'org.eclipse.jgit:org.eclipse.jgit:5.5.0.201909110433-r'
+  implementation 'com.netflix.nebula:gradle-info-plugin:3.0.3'
+  implementation 'com.perforce:p4java:2012.3.551082' // THIS IS SUPPOSED TO BE OPTIONAL IN THE FUTURE....
+  implementation 'org.apache.rat:apache-rat:0.11'
+  implementation "org.elasticsearch:jna:4.5.1"
+  implementation 'com.github.jengelman.gradle.plugins:shadow:5.1.0'
+  implementation 'de.thetaphi:forbiddenapis:2.7'
+  implementation 'com.avast.gradle:gradle-docker-compose-plugin:0.8.12'
+  testImplementation "junit:junit:${props.getProperty('junit')}"
+  testImplementation "com.carrotsearch.randomizedtesting:randomizedtesting-runner:${props.getProperty('randomizedrunner')}"
+  testImplementation 'com.github.tomakehurst:wiremock-jre8-standalone:2.23.2'
+  testImplementation 'org.mockito:mockito-core:1.9.5'
+  minimumRuntimeImplementation "junit:junit:${props.getProperty('junit')}"
+  minimumRuntimeImplementation localGroovy()
+  minimumRuntimeImplementation gradleApi()
 }
 
 /*****************************************************************************
