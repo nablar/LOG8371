@@ -14,9 +14,9 @@ jobs:
       with:
         java-version: 1.8
     - name :  Configure gradle
-      run: chmod +x ./gradle.sh
+      run: chmod +x .github/workflows/gradle.sh
     - name : Setup gradle
-      run: source ./gradle.sh
+      run: source .github/workflows/gradle.sh
     - name: Grant execute permission for gradlew
       run: chmod +x gradle
     - name: Build with Gradle
