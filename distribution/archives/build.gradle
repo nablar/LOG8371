@@ -97,7 +97,7 @@ tasks.withType(AbstractArchiveTask) {
   dependsOn createLogsDir, createPluginsDir
   String subdir = it.name.substring('build'.size()).replaceAll(/[A-Z]/) { '-' + it.toLowerCase() }.substring(1)
   destinationDir = file("${subdir}/build/distributions")
-  baseName = "elasticsearch${subdir.contains('oss') ? '-oss' : ''}"
+  archiveBaseName = "elasticsearch${subdir.contains('oss') ? '-oss' : ''}"
 }
 
 Closure commonZipConfig = {
@@ -135,7 +135,7 @@ task buildOssNoJdkWindowsZip(type: Zip) {
 }
 
 Closure commonTarConfig = {
-  extension = 'tar.gz'
+  archiveExtension = 'tar.gz'
   compression = Compression.GZIP
   dirMode 0755
   fileMode 0644
