@@ -16,10 +16,10 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x ./gradlew
     - name: Run Reindex tests with Gradle
-      run: ./gradlew :modules:reindex:test --tests org.elasticsearch.index.reindex.AsyncBulkByScrollActionTests 
+      run: ./gradlew :modules:reindex:test -i --tests org.elasticsearch.index.reindex.AsyncBulkByScrollActionTests 
     - name: Run Mapper tests with Gradle
-      run: ./gradlew :modules:mapper-extras:test --tests org.elasticsearch.index.mapper.RankFeatureFieldMapperTests 
+      run: ./gradlew :modules:mapper-extras:test -i --tests org.elasticsearch.index.mapper.RankFeatureFieldMapperTests 
     - name: Run GeoIp tests with Gradle
-      run: ./gradlew :modules:ingest-geoip:test --tests org.elasticsearch.ingest.geoip.GeoIpProcessorTests.testCity 
+      run: ./gradlew :modules:ingest-geoip:test -i --tests org.elasticsearch.ingest.geoip.GeoIpProcessorTests.testCity 
     - name: Run Rankeval tests with Gradle
-      run: ./gradlew :modules:rank-eval:test --tests org.elasticsearch.index.rankeval.DiscountedCumulativeGainTests.testDCGAt
+      run: ./gradlew :modules:rank-eval:test -i --tests org.elasticsearch.index.rankeval.DiscountedCumulativeGainTests.testDCGAt
