@@ -18,12 +18,24 @@ jobs:
     - name: Run Reindex tests with Gradle
       run: ./gradlew :modules:reindex:test -i --tests org.elasticsearch.index.reindex.AsyncBulkByScrollActionTests 
     - name: Run Mapper tests with Gradle
-      run: ./gradlew :modules:mapper-extras:test -i --tests org.elasticsearch.index.mapper.RankFeatureFieldMapperTests 
+      run: ./gradlew :modules:mapper-extras:test -i --tests org.elasticsearch.index.mapper.RankFeatureFieldMapperTests.testDefaults --tests org.elasticsearch.index.mapper.RankFeatureFieldMapperTests.testNegativeScoreImpact --tests org.elasticsearch.index.mapper.RankFeaturesFieldMapperTests.testDefaults --tests org.elasticsearch.index.mapper.ScaledFloatFieldMapperTests.testDefaults --tests org.elasticsearch.index.mapper.ScaledFloatFieldMapperTests.testNotIndexed --tests org.elasticsearch.index.mapper.ScaledFloatFieldMapperTests.testNoDocValues --tests org.elasticsearch.index.mapper.ScaledFloatFieldMapperTests.testStore --tests org.elasticsearch.index.mapper.ScaledFloatFieldMapperTests.testNullValue --tests org.elasticsearch.index.mapper.ScaledFloatFieldMapperTests.testMeta --tests org.elasticsearch.index.mapper.ScaledFloatFieldTypeTests.testTermQuery --tests org.elasticsearch.index.mapper.ScaledFloatFieldTypeTests.testTermsQuery --tests org.elasticsearch.index.mapper.ScaledFloatFieldTypeTests.testRangeQuery --tests org.elasticsearch.index.mapper.ScaledFloatFieldTypeTests.testRoundsUpperBoundCorrectly --tests org.elasticsearch.index.mapper.ScaledFloatFieldTypeTests.testRoundsLowerBoundCorrectly --tests org.elasticsearch.index.mapper.ScaledFloatFieldTypeTests.testValueForSearch --tests org.elasticsearch.index.mapper.SearchAsYouTypeAnalyzerTests.testSingleTermShingles --tests org.elasticsearch.index.mapper.SearchAsYouTypeAnalyzerTests.testMultiTermShingles --tests org.elasticsearch.index.mapper.SearchAsYouTypeAnalyzerTests.testSingleTermPrefix --tests org.elasticsearch.index.mapper.SearchAsYouTypeAnalyzerTests.testMultiTermPrefix
     - name: Run GeoIp tests with Gradle
       run: ./gradlew :modules:ingest-geoip:test -i --tests org.elasticsearch.ingest.geoip.GeoIpProcessorTests.testCity 
     - name: Run Rankeval tests with Gradle
       run: ./gradlew :modules:rank-eval:test -i --tests org.elasticsearch.index.rankeval.DiscountedCumulativeGainTests.testDCGAt
     - uses: actions/upload-artifact@v1
       with:
-        name: test-results-re-index
+        name: re-index_test-results
         path: /home/runner/work/LOG8371/LOG8371/modules/rank-eval/build/reports/tests/test
+    - uses: actions/upload-artifact@v1
+      with:
+        name: rankeval_test-results
+        path: /home/runner/work/LOG8371/LOG8371/modules/rankeval/build/reports/tests/test
+    - uses: actions/upload-artifact@v1
+      with:
+        name: mapper_test-results
+        path: /home/runner/work/LOG8371/LOG8371/modules/mapper-extras/build/reports/tests/test
+    - uses: actions/upload-artifact@v1
+      with:
+        name: geo-ip_test-results
+        path: /home/runner/work/LOG8371/LOG8371/modules/ingest-geoip/build/reports/tests/test
