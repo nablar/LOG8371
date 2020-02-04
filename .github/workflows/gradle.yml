@@ -18,6 +18,6 @@ jobs:
     - name : Setup gradle
       run: source .github/workflows/gradle.sh
     - name: Grant execute permission for gradlew
-      run: chmod +x gradle
+      run: chmod +x gradle-5.0/bin/gradle
     - name: Build with Gradle
-      run: gradle :modules:ingest-geoip:test:src:test --tests org.elasticsearch.ingest.geoip.GeoIpProcessorFactoryTests 
+      run: gradle-5.0/bin/gradle :modules:ingest-geoip:test:src:test --tests org.elasticsearch.ingest.geoip.GeoIpProcessorFactoryTests 
