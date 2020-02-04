@@ -44,6 +44,14 @@ test {
    * set the number of available processors as it's set-once in Netty.
    */
   systemProperty 'es.set.netty.runtime.available.processors', 'false'
+  
+  
+  useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+  
+  
 }
 
 dependencies {
