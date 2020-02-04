@@ -26,11 +26,11 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: re-index_test-results
-        path: /home/runner/work/LOG8371/LOG8371/modules/rank-eval/build/reports/tests/test
+        path: /home/runner/work/LOG8371/LOG8371/modules/reindex/build/reports/tests/test
     - uses: actions/upload-artifact@v1
       with:
         name: rankeval_test-results
-        path: /home/runner/work/LOG8371/LOG8371/modules/rankeval/build/reports/tests/test
+        path: /home/runner/work/LOG8371/LOG8371/modules/rank-eval/build/reports/tests/test
     - uses: actions/upload-artifact@v1
       with:
         name: mapper_test-results
