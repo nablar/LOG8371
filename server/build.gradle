@@ -45,11 +45,11 @@ if (!isEclipse && !isIdea) {
   }
 
   configurations {
-    java12Compile.extendsFrom(compile)
+    java12Implementation.extendsFrom(compile)
   }
 
   dependencies {
-    java12Compile sourceSets.main.output
+    java12Implementation sourceSets.main.output
   }
 
   compileJava12Java {
@@ -82,7 +82,7 @@ dependencies {
   compile project(":libs:elasticsearch-geo")
 
   compileOnly project(':libs:elasticsearch-plugin-classloader')
-  testRuntime project(':libs:elasticsearch-plugin-classloader')
+  testRuntimeOnly project(':libs:elasticsearch-plugin-classloader')
 
   // lucene
   compile "org.apache.lucene:lucene-core:${versions.lucene}"
@@ -125,7 +125,7 @@ dependencies {
   compile "org.elasticsearch:jna:${versions.jna}"
 
   if (!isEclipse && !isIdea) {
-    java12Compile sourceSets.main.output
+    java12Implementation sourceSets.main.output
   }
 
   testCompile(project(":test:framework")) {
