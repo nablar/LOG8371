@@ -16,4 +16,4 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x ./gradlew
     - name: Run tests with Gradle
-      run: ./gradlew :modules:ingest-geoip --tests org.elasticsearch.ingest.geoip.GeoIpProcessorFactoryTests 
+      run: ./gradlew :modules:reindex:test --tests org.elasticsearch.ingest.geoip.GeoIpProcessorFactoryTests 
