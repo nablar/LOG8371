@@ -17,6 +17,17 @@
  * under the License.
  */
 
+apply plugin: 'jacoco'
+
+jacocoTestReport {
+    group = "Reporting"
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination file("${buildDir}/reports/coverage")
+    }
+}
+
 esplugin {
   description 'Adds advanced field mappers'
   classname 'org.elasticsearch.index.mapper.MapperExtrasPlugin'
