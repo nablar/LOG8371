@@ -26,16 +26,16 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: re-index_test-results
-        path: /home/runner/work/LOG8371/LOG8371/modules/reindex/build/reports/coverage
+        path: /home/runner/work/LOG8371/LOG8371/modules/reindex/build/reports
     - uses: actions/upload-artifact@v1
       with:
         name: rankeval_test-results
-        path: /home/runner/work/LOG8371/LOG8371/modules/rank-eval/build/reports/coverage
+        path: /home/runner/work/LOG8371/LOG8371/modules/rank-eval/build/reports
     - uses: actions/upload-artifact@v1
       with:
         name: mapper_test-results
-        path: /home/runner/work/LOG8371/LOG8371/modules/mapper-extras/build/reports/coverage
+        path: /home/runner/work/LOG8371/LOG8371/modules/mapper-extras/build/reports
     - uses: actions/upload-artifact@v1
       with:
         name: geo-ip_test-results
-        path: /home/runner/work/LOG8371/LOG8371/modules/ingest-geoip/build/reports/coverage
+        path: /home/runner/work/LOG8371/LOG8371/modules/ingest-geoip/build/reports
